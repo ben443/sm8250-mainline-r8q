@@ -13,7 +13,7 @@ jobs:
         with:
           kernel-url: https://github.com/ben443/sm8250-mainline-r8q
           kernel-branch: sm8250/v6.2
-          config: mobian-r8q-defconfig
+          config: defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
