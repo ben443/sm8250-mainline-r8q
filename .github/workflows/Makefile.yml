@@ -1,5 +1,5 @@
-# A simple action usage
-name: Build Kernel
+- name: Android Kernel Build Action
+  uses: dabao1955/kernel_build_action@v1.8.0
 on:
   workflow_dispatch:
 
