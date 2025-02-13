@@ -1,30 +1,21 @@
-- name: Android Kernel Build Action
-  uses: dabao1955/kernel_build_action@v1.8.0
+name: build- kernel
+
 on:
   workflow_dispatch:
 
 jobs:
-  Build-Kernel:
-    strategy:
-      fail-fast: false
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
+  build-kernel:
+    name: Build Kernel
+    runs-on: ubuntu-22.04
     steps:
-    - name: Build Kernel
-      uses: dabao1955/kernel_build_action@main
-      with:
-          kernel-url: https://github.com/ben443/sm8250-mainline-r8q.git
-          #kernel-dir: msm-4.19
+      - name: Build
+        uses: dabao1955/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/ben443/sm8250-mainline-r8q
           kernel-branch: sm8250/v6.2
-          config: defconfig
+          config: mobian-r8q-defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
-          ksu: false
-          ksu-version: main
           android-version: 12
           aosp-clang-version: r383902
-          disable-lto: true
-          anykernel3: false
