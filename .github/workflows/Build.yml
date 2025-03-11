@@ -19,7 +19,7 @@ jobs:
       run: |
         export ARCH=arm64
         export CROSS_COMPILE=aarch64-linux-gnu-
-        make mobian-r8q-defconfig
+        make linux_defconfig
         make -j$(nproc) Image dtbs modules vmlinux
     - name: Create Artifact Directory
       run: mkdir -p artifacts
